@@ -1,0 +1,44 @@
+//write a funtion to retrieve a blob of json
+//make an ajax request! Use the 'fetch' function.
+
+//For older Browsers
+//function fetchAlbums(){
+    //fetch('https://rallycoding.herokuapp.com/api/music_albums')
+    //.then(res => res.json())
+    //.then(json => console.log(json));
+//}
+
+//fetchAlbums();
+
+
+//For Newer Browsers
+//async function fetchAlbums(){
+    //const res = await fetch('https://rallycoding.herokuapp.com/api/music_albums')
+    //const json = await res.json();
+    
+    //console.log(json);
+//}
+
+//fetchAlbums();
+
+
+//For latest Browsers
+const fetchAlbums = async () => {
+    const res = await fetch('https://rallycoding.herokuapp.com/api/music_albums')
+    const json = await res.json();
+    
+    console.log(json);
+}
+
+fetchAlbums();
+
+
+//Since Heroku no longer works, use the syntax below:
+const fetchAlbums = async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const json = await res.json();
+    
+    console.log(json);
+}
+
+fetchAlbums();
