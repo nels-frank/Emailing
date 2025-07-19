@@ -19,7 +19,7 @@ app.get(
     '/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/login' }),
     (req, res) => {
-      res.redirect('/dashboard'); // Change as needed
+      res.redirect('/surveys'); // Change as needed
     }
   );
 
