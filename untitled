@@ -42,3 +42,22 @@ const fetchAlbums = async () => {
 }
 
 fetchAlbums();
+
+//index.js file
+//app.use(
+    // cookieSession({
+      // maxAge: 30 * 24 * 60 * 60 * 1000,
+      // keys: [keys.cookieKey]
+   // })
+//);
+
+//app.use(
+  //session({
+    //secret: keys.expressKey,
+    //resave: false,
+    //saveUninitialized: false,
+    //cookie: {
+     // maxAge: 30 * 24 * 60 * 60 * 1000 // 30 days
+    //}
+  //})
+//);
