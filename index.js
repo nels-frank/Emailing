@@ -13,7 +13,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.set('trust proxy', 1); // trust first proxy
+//app.set('trust proxy', 1); // trust first proxy
 app.use(
   session({
     secret: keys.expressKey,
@@ -21,7 +21,7 @@ app.use(
     saveUninitialized: false,
     cookie: {
       maxAge: 30 * 24 * 60 * 60 * 1000,
-     // secure: process.env.NODE_ENV === 'production' // Send cookies over HTTPS only
+     secure: process.env.NODE_ENV === 'production' // Send cookies over HTTPS only
     }
   })
 );
