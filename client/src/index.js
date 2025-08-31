@@ -9,7 +9,9 @@ import { loadStripe } from '@stripe/stripe-js';
 
 import App from './components/App';
 import reducers from './reducers';
-
+//Development only axios helpers
+import axios from 'axios';
+window.axios = axios;
 // Load Stripe with your publishable key
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
