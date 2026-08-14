@@ -1,20 +1,5 @@
 {
   "version": 2,
   "buildCommand": "npm ci --prefix client && CI=false npm run build --prefix client",
-  "outputDirectory": "client/build",
-  "functions": {
-    "index.js": {
-      "runtime": "nodejs22.x"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/index.js"
-    },
-    {
-      "source": "/auth/(.*)",
-      "destination": "/index.js"
-    }
-  ]
+  "outputDirectory": "client/build"
 }
