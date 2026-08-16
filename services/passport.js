@@ -20,7 +20,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback',
+      //callbackURL: '/auth/google/callback',
+      callbackURL: `${keys.redirectDomain}/auth/google/callback`,
       proxy: true // <- this makes sure the strategy trusts Render's proxy and uses https
     },
 
