@@ -1,22 +1,27 @@
 {
   "version": 2,
+  "buildCommand": "npm install && npm install --prefix client && CI=false npm run build --prefix client",
   "builds": [
     {
       "src": "index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
+      "use": "@vercel/node",
       "config": {
-        "distDir": "build",
-        "zeroConfig": true
+        "includeFiles": ["client/build/**"]
       }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "index.js" },
-    { "src": "/auth/(.*)", "dest": "index.js" },
-    { "src": "/(.*)", "dest": "/client/$1" }
+    {
+      "src": "/api/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/auth/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
   ]
 }
