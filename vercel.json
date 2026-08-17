@@ -1,25 +1,4 @@
 {
-  "version": 2,
-  "buildCommand": "npm ci && npm ci --prefix client && CI=false npm run build --prefix client",
-  "outputDirectory": "client/build",
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/auth/(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "index.js"
-    }
-  ]
+  "buildCommand": "CI=false npm run build --prefix client",
+  "outputDirectory": "client/build"
 }
