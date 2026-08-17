@@ -50,14 +50,9 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 
-if (process.env.NODE_ENV === 'production') {
-  const path = require('path');
-  const buildPath = path.join(__dirname, 'client', 'build');
-
-  app.use(express.static(buildPath));
-
-  app.get(/^(?!\/api|\/auth).*/, (req, res) => {
-    res.sendFile(path.join(buildPath, 'index.html'));
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
   });
 }
 
