@@ -52,13 +52,12 @@ const PORT = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV === 'production') {
   const path = require('path');
+  const buildPath = path.join(__dirname, 'client', 'build');
 
-  app.use(express.static(path.join(__dirname, 'client', 'build')));
+  app.use(express.static(buildPath));
 
-  app.get(/.*/, (req, res) => {
-    res.sendFile(
-      path.join(__dirname, 'client', 'build', 'index.html')
-    );
+  app.get(/^(?!\/api|\/auth).*/, (req, res) => {
+    res.sendFile(path.join(buildPath, 'index.html'));
   });
 }
 
