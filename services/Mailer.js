@@ -7,8 +7,9 @@ class Mailer {
       apiKey: keys.mailgunKey,
       domain: keys.mailgunDomain,
     });
+    
     this.data = {
-      from: "your_mailgun_email@gmail.com",
+      from: "nelsscript_tech@gmail.com",
       to: this.formatAddresses(recipients),
       subject: subject,
       html: content,
