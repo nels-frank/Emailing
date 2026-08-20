@@ -1,3 +1,12 @@
+.header-nav {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.header-nav .nav-wrapper {
+  padding: 0 20px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,12 +16,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* =========================
+   HEADER
+========================= */
 
-/* Header */
 .header-nav {
   width: 100%;
 }
@@ -21,6 +28,7 @@ code {
   padding: 0 20px;
 }
 
+/* Keep payment area above other header elements */
 .payment-item {
   position: relative;
   z-index: 1000;
@@ -30,11 +38,20 @@ code {
   margin: 0 10px;
 }
 
-/* Mobile */
+.header-nav {
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* =========================
+   MOBILE HEADER
+========================= */
+
 @media only screen and (max-width: 600px) {
 
   .header-nav .nav-wrapper {
-    padding: 0 12px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .header-nav .brand-logo {
@@ -62,15 +79,26 @@ code {
   }
 
   .header-menu li a {
-    padding: 0 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  @media only screen and (max-width: 600px) {
+  .header-nav {
+    margin-top: 12px;
   }
 }
+}
 
-/* Very small phones */
+/* =========================
+   SMALL PHONES
+========================= */
+
 @media only screen and (max-width: 400px) {
 
   .header-nav .nav-wrapper {
-    padding: 0 8px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .header-nav .brand-logo {
@@ -83,10 +111,17 @@ code {
   }
 
   .header-menu li a {
-    padding: 0 5px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   .credit-item {
     margin: 0 3px !important;
   }
+
+  @media only screen and (max-width: 400px) {
+  .header-nav {
+    margin-top: 10px;
+  }
+}
 }

@@ -5,43 +5,62 @@ import Payments from './Payments';
 
 class Header extends Component {
   renderContent() {
-   switch (this.props.auth) {
+    switch (this.props.auth) {
       case null:
-         return;
+        return null;
+
       case false:
-          return <li><a href="/auth/google">Login With Google</a></li>;
+        return (
+          <li>
+            <a href="/auth/google">
+              Login With Google
+            </a>
+          </li>
+        );
+
       default:
-          return [
-         <li key="1"><Payments /></li>,
-         <li key="3" style={{ margin: '0 10px' }}>
+        return [
+          <li key="1" className="payment-item">
+            <Payments />
+          </li>,
+
+          <li key="3" className="credit-item">
             Credits: {this.props.auth.credits}
-         </li>,
-         <li key="2"><a href="/api/logout">Logout</a></li>
-          ];
-   }
+          </li>,
+
+          <li key="2">
+            <a href="/api/logout">
+              Logout
+            </a>
+          </li>
+        ];
+    }
   }
 
-   render() {
-      return (
-         <nav>
+  render() {
+    return (
+      <nav className="header-nav">
         <div className="nav-wrapper">
-         <Link 
-         to={this.props.auth ? '/surveys' : '/'}
-         className="left brand-logo"
-         >
+
+          <Link
+            to={this.props.auth ? '/surveys' : '/'}
+            className="brand-logo"
+          >
             Emailing
-         </Link>
-         <ul className="right">
+          </Link>
+
+          <ul className="right header-menu">
             {this.renderContent()}
-         </ul>
+          </ul>
+
         </div>
-        </nav>
-      )
-   }
-
-}function mapStateToProps({ auth }) {
-   return { auth };
-
+      </nav>
+    );
+  }
 }
 
-export default connect (mapStateToProps)(Header);
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps)(Header);

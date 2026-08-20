@@ -1,12 +1,14 @@
 //prod.js - production keys here!!
+
 module.exports = {
-googleClientID: process.env.GOOGLE_CLIENT_ID,
-googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
-mongoURI: process.env.MONGO_URI,
-expressKey: process.env.EXPRESS_KEY,
-stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
-stripeSecretKey: process.env.STRIPE_SECRET_KEY,
-mailgunKey: process.env.MAILGUN_KEY,
-mailgunDomain: process.env.MAILGUN_DOMAIN,
-redirectDomain: process.env.REDIRECT_DOMAIN
+  googleClientID: process.env.GOOGLE_CLIENT_ID,
+  googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  mongoURI: process.env.MONGO_URI,
+  expressKey: process.env.EXPRESS_KEY,
+  stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+  stripeSecretKey: process.env.STRIPE_SECRET_KEY,
+  stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
+  mailgunKey: process.env.MAILGUN_KEY,
+  mailgunDomain: process.env.MAILGUN_DOMAIN,
+  redirectDomain: process.env.REDIRECT_DOMAIN
 };
