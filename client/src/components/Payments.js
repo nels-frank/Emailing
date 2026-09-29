@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import {FiCreditCard} from 'react-icons/fi';
 
 class Payments extends Component {
   handlePayment = async () => {
@@ -21,12 +22,13 @@ class Payments extends Component {
   render() {
     return (
       <button
-        className="btn"
+        className="flex items-center gap-3 px-4 py-3 text-sm font-bold text-slate-200"
         onClick={this.handlePayment}
       >
+      <FiCreditCard className="h-5 w-5" />
         Add Credits
       </button>
-    );
+    );          
   }
 }
 

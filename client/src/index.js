@@ -1,36 +1,28 @@
-import 'materialize-css/dist/css/materialize.min.css';
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import reduxThunk from 'redux-thunk';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import './index.css';
-import App from './components/App';
-import reducers from './reducers';
-//Development only axios helpers
-import axios from 'axios';
-window.axios = axios;
-// Load Stripe with your publishable key
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
+import "./index.css";
+import App from "./components/App";
+import reducers from "./reducers";
 
-// Create Redux store
-const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
+const container = document.getElementById("root");
 
-// Get root DOM element and attach React root
-const container = document.getElementById('root');
-const root = createRoot(container);
+const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// Render app with Stripe Elements and Redux Provider
-root.render(
-  <Provider store={store}>
-    <Elements stripe={stripePromise}>
-      <App />
-    </Elements>
-  </Provider>
+const store = createStore(
+    reducers,
+    composeEnhancers(applyMiddleware(thunk))
 );
 
-// Debug logs (optional)
-console.log('STRIPE KEY IS', process.env.REACT_APP_STRIPE_KEY);
-console.log('Environment is', process.env.NODE_ENV);
+const root = ReactDOM.createRoot(container);
+
+root.render(
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>
+);

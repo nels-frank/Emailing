@@ -10,14 +10,37 @@ const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
 const Survey = mongoose.model('surveys');
 
-module.exports = app =>{
-app.get('/api/surveys', requireLogin, async (req, res) => {
-  const surveys = await Survey.find({ _user: req.user.id }).select({ 
-    recipients: false 
-  });
+    module.exports = app =>{
+    app.get('/api/surveys', requireLogin, async (req, res) => {
+      const surveys = await Survey.find({ _user: req.user.id }).select({ 
+        recipients: false 
+      });
 
-res.send(surveys);
-});
+    res.send(surveys);
+    });
+
+    app.delete('/api/surveys/:surveyId', requireLogin, async (req, res) => {
+      try {
+        const survey = await Survey.findOneAndDelete({
+          _id: req.params.surveyId,
+          _user: req.user.id,
+        });
+
+        if (!survey) {
+          return res.status(404).send({
+            error: 'Survey not found.',
+          });
+        }
+
+        res.send({ success: true });
+      } catch (err) {
+        console.error('Error deleting survey:', err);
+
+        res.status(500).send({
+          error: 'Failed to delete survey.',
+        });
+      }
+    });
 
   app.get('/api/surveys/:surveyId/:choice', (req, res) => {
     res.send('Thanks for voting!');

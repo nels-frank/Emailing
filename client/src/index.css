@@ -1,121 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Helvetica Neue", Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-.header-nav {
-  width: 100%;
-  margin-top: 15px;
+* {
+  box-sizing: border-box;
 }
 
-.header-nav .nav-wrapper {
-  padding: 0 20px;
-}
-
-/* Payment dropdown must stay above other elements */
-.payment-item {
-  position: relative;
-  z-index: 1000;
-}
-
-.credit-item {
-  margin: 0 10px;
-}
-
-
-
-/* =========================
-   MOBILE HEADER
-========================= */
-
-@media only screen and (max-width: 600px) {
-
-  .header-nav {
-    margin-top: 12px;
-  }
-
-  .header-nav .nav-wrapper {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .header-nav .brand-logo {
-    font-size: 1.5rem;
-    left: 10px;
-    transform: none;
-    white-space: nowrap;
-  }
-
-  .header-menu {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    white-space: nowrap;
-  }
-
-  .header-menu li {
-    font-size: 13px;
-  }
-
-  .header-menu li a {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  .payment-item {
-    margin-right: 2px;
-  }
-
-  .credit-item {
-    margin-left: 3px !important;
-    margin-right: 3px !important;
-  }
-}
-
-/* =========================
-   SMALL PHONES
-========================= */
-
-@media only screen and (max-width: 400px) {
-
-  .header-nav {
-    margin-top: 10px;
-  }
-
-  .header-nav .nav-wrapper {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-
-  .header-nav .brand-logo {
-    font-size: 1.3rem;
-    left: 6px;
-  }
-
-  .header-menu li {
-    font-size: 12px;
-  }
-
-  .header-menu li a {
-    padding-left: 3px;
-    padding-right: 3px;
-  }
-
-  .payment-item {
-    margin-right: 1px;
-  }
-
-  .credit-item {
-    margin-left: 2px !important;
-    margin-right: 2px !important;
-  }
+a {
+  text-decoration: none;
 }
