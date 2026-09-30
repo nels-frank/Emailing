@@ -224,7 +224,7 @@ const Landing = () => {
                 id="features"
                 className="bg-slate-50 py-6 sm:py-6"
             >
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="mx-auto max-w-7xl px-4 lg:px-8">
                     <div className="mx-auto max-w-3xl text-center">
                         <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-blue-700">
                             Everything you need
@@ -232,7 +232,7 @@ const Landing = () => {
 
                         <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl md:text-4xl">
                             Communication 
-                            <p className="text-2xl font-bold text-blue-700 md:text-6xl lg:text-6xl">and feedback in one place</p>
+                            <p className="text-3xl font-bold text-blue-700 md:text-4xl lg:text-4xl">and feedback in one place</p>
                         </h2>
 
                         <p className="mt-6 max-w-2xl text-lg font-extrabold leading-8 text-slate-600 sm:text-xl">
@@ -259,7 +259,7 @@ const Landing = () => {
                                         {feature.title}
                                     </h3>
 
-                                    <p className="mt-3 text-xl font-extrabold leading-7 text-slate-600">
+                                    <p className="mt-3 text-l font-extrabold leading-7 text-slate-600">
                                         {feature.description}
                                     </p>
                                 </div>
@@ -328,7 +328,7 @@ const Landing = () => {
                                             {step.title}
                                         </h3>
 
-                                        <p className="mt-1 text-xl font-extrabold leading-6 text-slate-600">
+                                        <p className="mt-1 text-l font-extrabold leading-6 text-slate-600">
                                             {step.text}
                                         </p>
                                     </div>

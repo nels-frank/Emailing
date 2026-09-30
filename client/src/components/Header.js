@@ -84,14 +84,14 @@ class Header extends Component {
                         <nav className="ml-auto flex items-center gap-2 sm:gap-3 md:gap-4">
                             <a
                                 href="#features"
-                                className="hidden rounded-lg bg-blue-700 px-3 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-blue-800 sm:inline-flex sm:px-4 sm:py-2.5 sm:text-sm"
+                                className="hidden rounded-lg bg-white px-3 py-2 text-xs font-bold text-black shadow-sm transition hover:bg-purple-50 sm:inline-flex sm:px-4 sm:py-2.5 sm:text-sm"
                             >
                                 Features
                             </a>
 
                             <a
                                 href="#how-it-works"
-                                className="hidden rounded-lg bg-blue-700 px-3 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-blue-800 sm:inline-flex sm:px-4 sm:py-2.5 sm:text-sm"
+                                className="hidden rounded-lg bg-white px-3 py-2 text-xs font-bold text-black shadow-sm transition hover:bg-purple-50 sm:inline-flex sm:px-4 sm:py-2.5 sm:text-sm"
                             >
                                 How It Works
                             </a>
@@ -99,7 +99,7 @@ class Header extends Component {
                             {/* Login */}
                             <a
                                 href="/auth/google"
-                                className="rounded-lg bg-blue-600 px-3 py-2.5 text-xs font-bold text-white transition hover:bg-blue-700 sm:px-5 sm:text-sm"
+                                className="rounded-lg bg-white px-3 py-2.5 text-xs font-bold text-black transition hover:bg-purple-50 sm:px-5 sm:text-sm"
                             >
                                 <span className="sm:hidden">Login With Google</span>
                                 <span className="hidden sm:inline">Login With Google</span>
