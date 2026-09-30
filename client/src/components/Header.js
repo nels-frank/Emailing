@@ -61,49 +61,51 @@ class Header extends Component {
         if (!auth) {
             return (
                 <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
-                    <div className="mx-auto flex min-h-[72px] w-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
-                        <nav className="border-b border-slate-200 bg-white space-4">
-                                        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
-                                            <a href="/" className="flex items-center gap-3">
-                                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-700 text-white shadow-md">
-                                                    <FiMail className="h-6 w-6" />
-                                                </div>
-                        
-                                                <div>
-                                                    <p className="text-2xl font-extrabold tracking-tight text-slate-950">
-                                                        Emailing
-                                                    </p>
-                                                    <p className="text-sm font-extrabold text-blue-900">
-                                                        Email & Survey Platform
-                                                    </p>
-                                                </div>
-                                            </a>
-                        
-                                           <div className="ml-80 hidden items-center gap-4 md:flex">
-                                                <a
-                                                    href="#features"
-                                                    className="hidden rounded-lg bg-blue-700 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-blue-800 sm:inline-flex"
-                                                >
-                                                    Features
-                                                </a>
-                        
-                                                <a
-                                                    href="#how-it-works"
-                                                    className="hidden rounded-lg bg-blue-700 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-blue-800 sm:inline-flex"
-                                                >
-                                                    How It Works
-                                                </a>
-                        
-                                            </div>
-                        
-                                        </div>
-                                    </nav>
-                               <a
-                            href="/auth/google"
-                            className="rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-blue-700 sm:px-5"
-                        >
-                            Login With Google
+                    <div className="mx-auto flex min-h-[72px] w-full max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+
+                        {/* Logo */}
+                        <a href="/" className="flex min-w-0 items-center gap-3">
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-700 text-white shadow-md sm:h-11 sm:w-11">
+                                <FiMail className="h-5 w-5 sm:h-6 sm:w-6" />
+                            </div>
+
+                            <div className="min-w-0">
+                                <p className="truncate text-xl font-extrabold tracking-tight text-slate-950 sm:text-2xl">
+                                    Emailing
+                                </p>
+
+                                <p className="truncate text-xs font-extrabold text-blue-900 sm:text-sm">
+                                    Email & Survey Platform
+                                </p>
+                            </div>
                         </a>
+
+                        {/* Navigation */}
+                        <nav className="ml-auto flex items-center gap-2 sm:gap-3 md:gap-4">
+                            <a
+                                href="#features"
+                                className="hidden rounded-lg bg-blue-700 px-3 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-blue-800 sm:inline-flex sm:px-4 sm:py-2.5 sm:text-sm"
+                            >
+                                Features
+                            </a>
+
+                            <a
+                                href="#how-it-works"
+                                className="hidden rounded-lg bg-blue-700 px-3 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-blue-800 sm:inline-flex sm:px-4 sm:py-2.5 sm:text-sm"
+                            >
+                                How It Works
+                            </a>
+
+                            {/* Login */}
+                            <a
+                                href="/auth/google"
+                                className="rounded-lg bg-blue-600 px-3 py-2.5 text-xs font-bold text-white transition hover:bg-blue-700 sm:px-5 sm:text-sm"
+                            >
+                                <span className="sm:hidden">Login With Google</span>
+                                <span className="hidden sm:inline">Login With Google</span>
+                            </a>
+                        </nav>
+
                     </div>
                 </header>
             );

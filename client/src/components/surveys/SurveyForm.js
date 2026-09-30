@@ -137,7 +137,7 @@ class SurveyForm extends Component {
             >
 
                 {/* Gmail Header */}
-                <div className="flex h-[52px] items-center justify-between bg-blue-800 px-4 text-white">
+                <div className="flex h-[52px] items-center justify-between bg-slate-800 px-4 text-white">
 
                     <div className="flex items-center gap-2">
                         <span className="text-sm font-bold">

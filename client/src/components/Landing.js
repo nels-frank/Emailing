@@ -58,7 +58,7 @@ const Landing = () => {
                         <h1 className="max-w-3xl text-2xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl sm: text-center lg:text-4xl">
                             Connect with your audience.
                             </h1>
-                            <h1 className="max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl sm: text-center lg:text-6xl">
+                            <h1 className="max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl sm: text-center lg:text-3xl">
                             <span className="block text-blue-700">
                                 Learn from their feedback.
                             </span>
